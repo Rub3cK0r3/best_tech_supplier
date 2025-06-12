@@ -1,0 +1,33 @@
+{% extends "main_page/layout.html" %}
+{% block article1 %}
+
+{% load static %}
+{% block styles %}
+  <link rel="stylesheet" href= {% static "employee/css/styles.css" %}>
+{% endblock styles %}
+
+  <h2>Conoce a Nuestro Equipo</h2>
+  <p>
+    Nuestro equipo está compuesto por profesionales comprometidos, apasionados por lo que hacen y enfocados en brindar soluciones de calidad. Contamos con una diversidad de perfiles que enriquecen cada proyecto con distintas perspectivas y habilidades complementarias.
+  </p>
+  <p>
+    Valoramos el trabajo en equipo, la innovación y la mejora continua. Cada miembro aporta no solo su experiencia, sino también su entusiasmo y creatividad para alcanzar los objetivos comunes.
+  </p>
+{% endblock article1 %}
+{% block article2 %}
+  <h2>Nuestros Profesionales</h2>
+    <ul>
+    {% for empleado in empleados %}
+        <li>{{empleado.name}} {{empleado.surname}} - {{empleado.puesto}}</li>
+    {% endfor %}
+    </ul>
+  {% load static %}
+  <img src="{% static "employee/img/team.jpg" %}">
+  <p>
+    Cada integrante desempeña un rol clave en el éxito de nuestros proyectos, trabajando en colaboración y siempre con el cliente en el centro de nuestras decisiones.
+  </p>
+
+{% endblock article2 %}
+
+{% block content %}
+{% endblock content %}

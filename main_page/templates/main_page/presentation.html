@@ -1,0 +1,49 @@
+{% extends "main_page/layout.html" %}
+
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "main_page/css/styles.css" %}">
+{% endblock style %}
+    
+{% block article1 %}
+    <section class="hero">
+        <div>Calidad y Tecnología al Alcance de Todos</div>
+    </section>
+{% endblock article1 %}
+{% block article2 %}
+    <p>Especialistas en Venta y Suministro de Hardware Electrónico</p>
+
+    <section class="container">
+        <h2>¿Qué ofrecemos?</h2>
+        <p>Proveemos componentes electrónicos de alta calidad para empresas, profesionales y entusiastas de la tecnología.</p>
+        <img src="{% static "main_page/img/electronica.jpg" %}">
+        <div class="features">
+            <div class="feature">
+                <h3>Componentes Electrónicos</h3>
+                <p>Amplio stock de resistencias, condensadores, microcontroladores, sensores y más.</p>
+                <img src="{% static "main_page/img/portada-electronica.jpg" %}">
+            </div>
+            <div class="feature">
+                <h3>Envío Rápido</h3>
+                <p>Envíos nacionales e internacionales con seguimiento y seguridad garantizada.</p>
+            </div>
+            <div class="feature">
+                <h3>Asesoría Técnica</h3>
+                <p>Soporte especializado para ayudarte a encontrar lo que necesitas.</p>
+                <img src="{% static "main_page/img/asesoria.jpg" %}">
+            </div>
+        </div>
+    </section>
+{% endblock article2 %}
+{% block content %}
+<fieldset>
+<legend>PRODUCTOS EN VENTA</legend>
+    <ul>
+    {% for producto in productos %}
+        <li>
+            {{producto.name}} - {{producto.pvp}}€
+        </li>
+    {% endfor %}
+    </ul>
+</fieldset>
+{% endblock content %}

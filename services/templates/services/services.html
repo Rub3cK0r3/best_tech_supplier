@@ -1,0 +1,46 @@
+{% extends "main_page/layout.html" %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static "services/css/styles.css" %}">
+{% endblock %}
+
+{% block article1 %}
+  <h2>Nuestros Servicios</h2>
+  <p>
+    En nuestra tienda encontrarás una cuidada selección de productos diseñados para ofrecerte calidad, funcionalidad y estilo. Trabajamos con los mejores materiales y proveedores para garantizarte una experiencia satisfactoria en cada compra.
+  </p>
+  <p>
+    Ya sea que estés buscando algo práctico para el día a día o un artículo especial, tenemos opciones para todos los gustos y necesidades. Explora nuestro catálogo y descubre todo lo que hemos preparado para ti.
+  </p>
+{% endblock article1 %}
+{% block article2 %}
+  <div class = "image-row">
+      <img src="{% static "services/img/tech.jpg" %}">
+      <img src="{% static "services/img/repair.jpg" %}">
+      <img src="{% static "services/img/chip.jpg" %}">
+  </div>
+  <h2>Lo Más Destacado</h2>
+  <!--Bucle para mostrar los productos con el menor precio-->
+    <ul>
+      {% for producto in productos %}
+        <li>Producto en liquidacion!! {{producto.name}} - <strong>{{producto.pvp}}€</strong></li>
+      {% endfor %}
+    </ul>
+    <p>
+        Todos nuestros productos están disponibles con envío rápido, garantía de satisfacción y atención personalizada. ¡Haz tu pedido hoy y vive la diferencia!
+    </p>
+{% endblock article2 %}
+
+{% block content %}
+    <!--Aqui le daras un poco de estilos-->
+    <h3>RECUERDA NUESTRAS OFERTAS!!</h3>
+    <fieldset>
+        <!--Por hacer, tendras que acceder a la base de datos y displayar datos-->
+      <ul>
+        {% for oferta in ofertas %}
+          <li>{{oferta.name}} - {{oferta.description}}</li>
+        {% endfor %}
+     </ul>
+    </fieldset>
+{% endblock content %}

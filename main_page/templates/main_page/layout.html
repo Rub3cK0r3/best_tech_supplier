@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTechSupp</title>
+    {% block style %}
+    <!--Para linkear los estilos de cada uno de los archivos de estilo-->
+    {% endblock style %}
+</head>
+<body>
+    <main>
+        <article>
+            {% block article1 %}
+                <!--Primer párrafo/contenido relevante de la pagina-->
+            {% endblock article1 %}
+        </article>
+        <article>
+            {% block article2 %}
+                <!--Segundo párrafo/contenido relevante de la pagina-->
+            {% endblock article2 %}
+        </article>
+    </main>
+    <!--El contenido de navegacion de cada pagina-->
+    <nav>
+    {% block content %}
+    {% endblock %}
+    </nav>
+    <!--Footer va a ser todos iguales porque va a tener la navbar-->
+    <footer class="navbar">
+        <fieldset>
+        <a href="{% url "main" %}">Inicio</a>
+        <a href="{% url "ini_emp" %}">Team</a>
+        <a href="{% url "ini_serv" %}">Services</a>
+        <a href="{% url "ini_form" %}">Booking</a>
+        <p>&copy; 2025 BTechSupp. Todos los derechos reservados.</p>
+        </fieldset>
+    </footer>
+</body>
+</html>
