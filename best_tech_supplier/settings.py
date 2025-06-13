@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     #Añado el app de los servicios que ofrecemos a los clientes
     'services',
     #Añado el app de la pagina principal
-    'main_page'
+    'main_page',
+    #Añado el app de la pagina de formulario de reservas
+    'team_consulting',
 ]
 
 MIDDLEWARE = [
