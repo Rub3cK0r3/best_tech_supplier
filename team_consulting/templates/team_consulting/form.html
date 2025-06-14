@@ -6,39 +6,33 @@
 {% endblock %}
 
 {% block article1 %} <!--El form principal para reservar una cita con el Asesor que el elija-->
-<h1>Reservar una cita con un asesor</h1>
 <form action="" method="POST">
   {% csrf_token %}
-  <label for="nombre">Nombre completo:</label><br>
-  <input type="text" id="nombre" name="nombre" required><br><br>
+  <label for="id_nombre_completo">Nombre completo:</label><br>
+  <input type="text" id="id_nombre_completo" name="nombre_completo" required><br><br>
 
-  <label for="email">Correo electrónico:</label><br>
-  <input type="email" id="email" name="email" required><br><br>
+  <label for="id_correo">Correo electrónico:</label><br>
+  <input type="email" id="id_correo" name="correo" required><br><br>
 
-  <label for="telefono">Teléfono de contacto:</label><br>
-  <input type="tel" id="telefono" name="telefono"><br><br>
-{% endblock article1 %}
+  <label for="id_telefono">Teléfono de contacto:</label><br>
+  <input type="tel" id="id_telefono" name="telefono" required><br><br>
 
-{% block article2 %} <!--La otra parte del form para datos personales,fecha,etc..-->
-  <label for="fecha">Fecha de la cita:</label><br>
-  <input type="date" id="fecha" name="fecha" required><br><br>
+  <label for="id_fecha_cita">Fecha de la cita:</label><br>
+  <input type="date" id="id_fecha_cita" name="fecha_cita" required><br><br>
 
-  <label for="hora">Hora preferida:</label><br>
-  <input type="time" id="hora" name="hora" required><br><br>
-
-  <label for="tipo">Tipo de asesoría:</label><br>
-  <select id="tipo" name="tipo" required>
+  <label for="id_tipo_cita">Tipo de asesoría:</label><br>
+  <select id="id_tipo_cita" name="tipo_cita" required>
     <option value="">Selecciona una opción</option>
     <option value="seguridad">Auditoría de ciberseguridad</option>
     <option value="presupuesto">Presupuesto empresarial</option>
   </select><br><br>
 
-  <label for="mensaje">Comentarios adicionales:</label><br>
-  <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Hay algo más que debamos saber?"></textarea><br><br>
+  <label for="id_comentario">Comentarios adicionales:</label><br>
+  <textarea id="id_comentario" name="comentario" rows="4" placeholder="¿Hay algo más que debamos saber?"></textarea><br><br>
 
   <input type="submit" value="Reservar cita">
 </form>
-{% endblock article2 %}
+{% endblock article1 %}
 
 {% block content %}
   <section>

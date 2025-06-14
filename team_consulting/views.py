@@ -1,5 +1,6 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .forms import DatosClienteFormulario
+from .models import Cliente
 # Create your views here.
 # En este caso no es necesario usar un contexto por lo que no lo renderizo a la template
 def first(request):
