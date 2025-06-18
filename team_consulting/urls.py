@@ -8,5 +8,6 @@ from .views import gracias as thanks_page
 urlpatterns = [
     # '' porque es la principal de mi vista de empleados
     path('',Consulting_form_page,name="ini_form"),
-    path('gracias/',thanks_page,name="thanks"),
+    # La vista lo que recibe va directamente relacionado con lo que recibe la url
+    path('gracias/<str:nombre>',thanks_page,name="thanks"),
 ]

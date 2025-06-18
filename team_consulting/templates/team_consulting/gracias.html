@@ -1,1 +1,21 @@
-<h1>GRACIAS POR COMPLETAR EL FORMULARIO</h1>
+{% extends "main_page/layout.html" %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static "team_consulting/css/styles.css" %}">
+{% endblock %}
+
+{% block article1 %}
+<h1>Your form has been submitted successfully! {{nombre}}</h1>
+{% endblock article1 %}
+
+{% block content %}
+<p>Our company is committed to ensuring the highest standards of data protection
+ and privacy. All personal and sensitive information collected is handled in accordance
+ with applicable data protection laws and internal security protocols. 
+ We implement strict access controls, regularly update our systems to prevent unauthorized
+ access, and use encryption where appropriate. Employees are trained to handle data responsibly, and 
+ any third-party service providers are required to comply with our data privacy standards.
+ The information collected is used solely for legitimate business purposes and is never shared without 
+ explicit consent, unless required by law.</p>
+{% endblock content %}

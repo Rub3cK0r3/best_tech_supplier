@@ -18,13 +18,16 @@ def first(request):
                 tipo_cita=data['tipo_cita'],
                 comentario=data['comentario'],
             )
-            return redirect('thanks')  # Asegúrate de tener esta ruta en urls.py
+            return redirect('thanks',nombre = data['nombre_completo'])  # Asegúrate de tener esta ruta en urls.py
         else:
             return render(request, template, {'form': form})
     else:
         form = DatosClienteFormulario()
         return render(request, template, {'form': form})
 
-def gracias(request):
+def gracias(request,nombre):
     template_gracias = 'team_consulting/gracias.html'
-    return render(request,template_gracias)
+    context_thanks = {
+        'nombre' : nombre
+    }
+    return render(request,template_gracias,context_thanks)
