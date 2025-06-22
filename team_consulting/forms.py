@@ -16,5 +16,6 @@ class DatosClienteFormulario(forms.Form):
         required=True,
         label="Tipo de asesoría"
     )
+    
     comentario = forms.CharField(max_length=300, required=True)
     

@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
+#El modelo cliente representa los datos del Cliente que introdujo en el formulario para pedir una cita
 class Cliente(models.Model):
     nombre_completo = models.CharField(max_length=150)
     correo = models.EmailField(max_length=150)
